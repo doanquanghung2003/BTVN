@@ -15,9 +15,9 @@ INSERT INTO nhanvien (id, NAME , ngay_bat_dau , so_chiec) VALUES
 	(4, 'huong' , '2007-04-06' , 220),
 	(5, 'xuan' , '2007-06-06' , 300),
 	(5, 'xuan' , '2007-02-06' , 350);
-	
+	 
 
-SELECT CONCAT(id, ': ', NAME, ', ', ngay_bat_dau, CHAR(10)) AS thong_tin FROM nhanvien;
+SELECT CONCAT(id, ': ', NAME, ', ', ngay_bat_dau) AS thong_tin FROM nhanvien;
 
 
 
@@ -36,4 +36,4 @@ INSERT INTO employee (id , NAME , salary) VALUES
 (32 , 'Werner' , 5600),
 (42 , 'Watson' , 900000);
 
-SELECT id , NAME , (salary * 2) FROM employee;
+SELECT id , NAME , if(salary < 50000 , salary * 2 , salary) FROM employee;
